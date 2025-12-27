@@ -17,7 +17,7 @@ class CustomUserManager(BaseUserManager):
             last_name=last_name,
             username=username,
             email=email,
-            **extra_fields
+            **extra_fields,
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -65,9 +65,38 @@ class CustomUser(AbstractBaseUser):
 
     def __str__(self):
         return self.email
-    
+
     def has_perm(self, perm, obj=None):
         return self.is_superuser
-    
+
     def has_module_perms(self, app_label):
         return True
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(
+        upload_to="users/profile_pictures/", blank=True, null=True
+    )
+    cover_photo = models.ImageField(
+        upload_to="users/cover_photos/", blank=True, null=True
+    )
+    address = models.CharField(max_length=255, blank=True)
+    country = models.CharField(max_length=50, blank=True)
+    state = models.CharField(max_length=50, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    pin_code = models.CharField(max_length=10, blank=True)
+    latitude = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True
+    )
+    longitude = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.email
+
+    def full_address(self):
+        return f"{self.address}, {self.city}, {self.state}, {self.country} - {self.pin_code}"
