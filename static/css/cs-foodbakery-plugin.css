@@ -1,3 +1,23 @@
+/* Main Right Section */
+.main-right { float: right; text-align: right; padding: 15px 0; }
+.main-right > ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; justify-content: flex-end; }
+.main-right > ul > li { display: inline-block; vertical-align: middle; margin-left: 12px; }
+.main-right > ul > li:first-child { margin-left: 0; }
+.main-right .serach-bar { position: relative; }
+.main-right .serach-bar form { position: relative; margin: 0; }
+.main-right .serach-bar input[type="text"] { background-color: #f7f7f7; border: 1px solid #e8e8e8; border-radius: 3px; color: #333; font-size: 13px; height: 42px; padding: 0 40px 0 15px; width: 280px; outline: none; }
+.main-right .serach-bar button[type="submit"] { background: none; border: none; color: #999; cursor: pointer; font-size: 16px; height: 42px; position: absolute; right: 0; top: 0; width: 40px; outline: none; }
+.main-right .serach-bar button[type="submit"]:hover { color: #c33332; }
+.main-right .foodbakery-dark-mode { line-height: 1; }
+.main-right .foodbakery-dark-mode a { color: #333; font-size: 20px; display: inline-block; line-height: 42px; text-decoration: none; }
+.main-right .foodbakery-dark-mode a:hover { color: #c33332; }
+.main-right .foodbakery-reg-btn { display: inline-block; text-decoration: none; }
+.main-right .foodbakery-reg-btn span { background-color: transparent; border: 1px solid #c33332; border-radius: 3px; color: #c33332; font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: normal; padding: 10px 20px; text-transform: uppercase; display: inline-block; transition: all 0.3s ease; }
+.main-right .foodbakery-reg-btn:hover span { background-color: #c33332; color: #fff; }
+.main-right .foodbakery-login-btn { display: inline-block; cursor: pointer; text-decoration: none; }
+.main-right .foodbakery-login-btn span { background-color: #c33332; border: 1px solid #c33332; border-radius: 3px; color: #fff; font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: normal; padding: 10px 20px; text-transform: uppercase; display: inline-block; transition: all 0.3s ease; }
+.main-right .foodbakery-login-btn:hover span { background-color: #b02d2c; border-color: #b02d2c; }
+
 .main-header .login-option { float: right; text-align: right; }
 .main-header .login-option a { outline: none; text-decoration: none; }
 .main-header .login-option a.login-popup { color: #333; font-size: 13px; font-weight: 700; margin: 0 0 0 15px; text-transform: uppercase; display: inline-block; margin-top: 22px; }

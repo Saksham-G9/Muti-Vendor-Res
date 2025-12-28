@@ -6,12 +6,14 @@ from foodOnline_main import views
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name="home")
+    path("admin/", admin.site.urls),
+    path("", views.home, name="home"),
+    path("accounts/", include("accounts.urls")),
 ]
 
 if settings.DEBUG:
     import django_browser_reload
+
     urlpatterns += [
         path("__reload__/", include("django_browser_reload.urls")),
     ]

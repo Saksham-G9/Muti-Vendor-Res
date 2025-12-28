@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}FoodOnline{% endblock %}</title>
+	
+	<!-- Google Font Family Link Start -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
+	<!-- Google Font Family Link End -->
+	
+	<!-- Bootstrap Link Start-->
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-theme.css' %}" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-datepicker.css' %}" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-slider.css' %}" rel="stylesheet">
+	<!-- Bootstrap Link End-->
+	
+	<!-- Iconmoon Link Start-->
+	<link href="{% static 'css/iconmoon.css' %}" rel="stylesheet">
+	<!-- Iconmoon Link End-->
+	
+	<!-- Animate Link Start-->
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<!-- Animate Link End-->
+	
+	<!-- Chosen Link Start-->
+	<link href="{% static 'css/chosen.css' %}" rel="stylesheet">
+	<!-- Chosen Link End-->
+	
+	<!-- Swiper Link Start-->
+	<link href="{% static 'css/swiper.css' %}" rel="stylesheet">
+	<!-- Swiper Link End-->
+	
+	<!-- Woocommerce Link Start-->
+	<link href="{% static 'css/woocommerce.css' %}" rel="stylesheet">
+	<!-- Woocommerce Link End-->
+	
+	<!-- Pretty Photo Link Start-->
+	<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+	<!-- Pretty Photo Link End-->
+	
+	<!-- Themes / plugin Link Start-->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/cs-foodbakery-plugin.css' %}" rel="stylesheet">
+	<link href="{% static 'css/color.css' %}" rel="stylesheet">
+	<link href="{% static 'css/widget.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+	<link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+	<!-- Themes / plugin Link End-->
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{% static 'js/modernizr.js' %}"></script>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	
+	<style>
+		body, .main-section p, .mce-content-body p{
+			font:Normal  14px/24px "Open Sans", sans-serif;letter-spacing: 0px;text-transform: none;color: #515151 !important;
+		}
+	</style>
+	
+	{% block extra_css %}{% endblock %}
+</head>
+
+<body>
+	<!--Main Wrapper-->
+	<div class="wrapper">
+		<!-- Header Start -->
+		<header id="header">
+			<div class="main-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div class="logo">
+								<figure>
+									<a href="{% url 'home' %}" class="light-logo">
+										<img src="{% static 'extra-images/main-logo.png' %}" alt="FoodBakery">
+									</a>
+								</figure>
+							</div>
+							<div class="main-nav">
+								<nav id="site-navigation" class="main-navigation">
+									<ul>
+										<li>
+											<a href="#">Demos</a>
+											<ul>
+												<li><a href="#">Food Bakery</a></li>
+												<li><a href="#">Mexican Restaurant</a></li>
+												<li><a href="#">Food Stop</a></li>
+												<li><a href="#">Rtl Demo</a></li>
+												<li><a href="#">Food Court</a></li>
+												<li><a href="#">Single Restaurant Demo</a></li>
+											</ul>
+											<!--End Sub Menu -->
+										</li>
+										<li><a href="{% url 'home' %}">Restaurants</a></li>
+										<li>
+											<a href="#">Pages</a>
+											<ul>
+												<li><a href="#">Price Plans</a></li>
+												<li><a href="#">How it works</a></li>
+												<li><a href="#">FAQ's</a></li>
+												<li><a href="#">404</a></li>
+												<li><a href="#">Search Result</a></li>
+												<li><a href="#">Contact</a></li>
+											</ul>
+											<!--End Sub Menu -->
+										</li>
+										<li>
+											<a href="#">Blogs</a>
+											<ul>
+												<li><a href="#">Blog Large</a></li>
+												<li><a href="#">Blog Medium</a></li>
+												<li><a href="#">Blog Masonry</a></li>
+												<li><a href="#">Blog Detail Page</a></li>
+											</ul>
+											<!--End Sub Menu -->
+										</li>
+									</ul>
+								</nav><!-- .main-navigation -->
+							</div>
+							
+							<div class="main-location">
+								<ul>
+									<li class="location-has-children choose-location">
+										<form action="#">
+											<input type="text" value="" name="location" placeholder="Enter your delivery location" autocomplete="off">
+											<span id="foodbakery_radius_location_open" class="foodbakery-radius-location"><i class="icon-target5"></i></span>
+										</form>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<div class="main-right">
+								<ul>
+									<li class="serach-bar">
+										<form action="#">
+											<input type="text" placeholder="Search Your Food or Restaurant...">
+											<button type="submit"><i class="icon-loupe"></i></button>
+										</form>
+									</li>
+									<li class="foodbakery-mode foodbakery-dark-mode">
+										<a href="javascript:void(0)" class="dark-mode-btn">
+											<i class="icon-sun"></i>
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'register_user' %}" class="foodbakery-reg-btn"><span>Register</span></a>
+									</li>
+									<li>
+										<a href="javascript:void(0)" class="foodbakery-login-btn"><span>Login</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+		
+		<!-- Content Block -->
+		{% block content %}
+		<!-- Page content goes here -->
+		{% endblock %}
+		
+		<!-- Footer Start -->
+		<footer id="footer" class="footer-style-2">
+			<div class="footer-widget">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="widget widget-newsletter">
+								<div class="widget-title">
+									<h5>Subscribe to our Newsletter</h5>
+								</div>
+								<div class="fieldset">
+									<form action="#">
+										<div class="field-holder">
+											<label>
+												<i class=" icon-envelope3"></i>
+												<input type="text" class="field-input" placeholder=" Enter Your Email Address...">
+											</label>
+										</div>
+										<div class="field-holder btn-holder">
+											<input class="subscribe-btn bgcolor" type="submit" value="Sign Up">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-sec">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="copyright-inner">
+								<div class="copy-right">
+									<p>© 2020 Foodbakery. All Rights Reserved. Powered By <a href="#">ChimpGroup</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.cs-copyright -->
+		</footer>
+		<!-- Footer End -->
+	</div>
+	
+	<!-- Modal Popup Start -->
+	<div id="id_confrmdiv" style="display: none;">
+		<div class="cs-confirm-container">
+			<i class="icon-sad"></i>
+			<div class="message">You Want To Delete?</div>
+			<a href="javascript:void(0);" id="id_truebtn">Yes, Delete</a>
+			<a href="javascript:void(0);" id="id_falsebtn">No, Cancel</a>
+		</div>
+	</div>
+	<!-- Modal Popup End -->
+	
+	<!-- Scripts -->
+	<script src="{% static 'js/responsive.menu.js' %}"></script>
+	<script src="{% static 'js/swiper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+	<script src="{% static 'js/chosen.js' %}"></script>
+	<script src="{% static 'js/counter.js' %}"></script>
+	<script src="{% static 'js/fliters.js' %}"></script>
+	<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'js/jquery.growl.js' %}"></script>
+	<script src="{% static 'js/jquery.matchHeight-min.js' %}"></script>
+	<script src="{% static 'js/masonry.pkgd.js' %}"></script>
+	<script src="{% static 'js/skills-progress.js' %}"></script>
+	<script src="{% static 'js/bootstrap-slider.js' %}"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
+	<script src="{% static 'js/functions-plugin.js' %}"></script>
+	<script src="{% static 'js/functions.js' %}"></script>
+	
+	{% block extra_js %}{% endblock %}
+</body>
+
+</html>

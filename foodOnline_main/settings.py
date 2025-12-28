@@ -31,6 +31,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="", cast=Csv())
 
 # Application definition
 
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",
+    "widget_tweaks",
 ]
 
 if DEBUG:
