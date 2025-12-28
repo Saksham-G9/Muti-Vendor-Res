@@ -7,14 +7,13 @@ class RegisterUserForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ['first_name', 'last_name', 'username', 'email', 'phone_number', 'role', 'password']
+        fields = ['first_name', 'last_name', 'username', 'email', 'phone_number', 'password']
         widgets = {
             'first_name': forms.TextInput(attrs={'placeholder': 'Enter First Name'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Enter Last Name'}),
             'username': forms.TextInput(attrs={'placeholder': 'Enter Username'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter Email'}),
             'phone_number': forms.TextInput(attrs={'placeholder': 'Enter Phone Number'}),
-            'role': forms.Select(choices=CustomUser.USER_TYPE_CHOICES, attrs={'class': 'chosen-select'}),
         }
         labels = {
             'first_name': 'First Name',
